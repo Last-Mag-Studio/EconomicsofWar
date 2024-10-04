@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.idea/EconomicsofWar.iml
+.idea/modules.xml
+.idea/vcs.xml
