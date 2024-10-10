@@ -28,6 +28,6 @@ setInterval(() => {
             client.send(JSON.stringify({ type: 'time', data: currentTime }));
         }
     });
-}, 300000); // 300000 ms = 5 minutes
+}, 15000); // 300000 ms = 5 minutes
 
 console.log('WebSocket server is running on ws://66.179.252.151:8447');
