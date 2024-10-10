@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws://localhost:8447');
+const ws = new WebSocket('ws://66.179.252.151:8447');
 let totalTimePlayed = 0;
 let clientPlayTime = parseInt(localStorage.getItem('clientPlayTime')) || 0;
 let clientId = null;

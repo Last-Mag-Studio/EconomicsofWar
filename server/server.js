@@ -2,7 +2,7 @@ const fs = require('fs');
 const WebSocket = require('ws');
 const { v4: uuidv4 } = require('uuid');
 
-const wss = new WebSocket.Server({ host: 'localhost', port: 8447 });
+const wss = new WebSocket.Server({ host: '66.179.252.151', port: 8447 });
 let connections = 0;
 let totalTimePlayed = 0;
 const clientPlayTimes = {};
