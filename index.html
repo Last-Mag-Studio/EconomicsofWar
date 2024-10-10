@@ -16,8 +16,8 @@
         const message = JSON.parse(event.data);
         if (message.type === 'connections') {
             document.getElementById('connections').innerText = message.data;
-        } else if (message.type === 'totalTimePlayed') {
-            document.getElementById('totalTimePlayed').innerText = message.data;
+        } else if (message.type === 'time') {
+            document.getElementById('time').innerText = message.data;
         }
     };
 </script>
