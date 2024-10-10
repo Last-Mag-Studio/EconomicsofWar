@@ -12,7 +12,10 @@
 <script>
     const ws = new WebSocket('ws://66.179.252.151:8080');
     ws.onmessage = (event) => {
-        document.getElementById('connections').innerText = event.data;
+        const message = JSON.parse(event.data);
+        if (message.type === 'connections') {
+            document.getElementById('connections').innerText = message.data;
+        }
     };
 </script>
 </body>

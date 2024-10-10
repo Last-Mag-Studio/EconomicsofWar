@@ -7,7 +7,7 @@ wss.on('connection', (ws) => {
     connections++;
     wss.clients.forEach(client => {
         if (client.readyState === WebSocket.OPEN) {
-            client.send(connections);
+            client.send(JSON.stringify({ type: 'connections', data: connections }));
         }
     });
 
@@ -15,7 +15,7 @@ wss.on('connection', (ws) => {
         connections--;
         wss.clients.forEach(client => {
             if (client.readyState === WebSocket.OPEN) {
-                client.send(connections);
+                client.send(JSON.stringify({ type: 'connections', data: connections }));
             }
         });
     });
