@@ -10,7 +10,7 @@
 <h2>Connected users: <strong id='connections'>0</strong></h2>
 <script src="renderer.js"></script>
 <script>
-    const ws = new WebSocket('ws://lastmagstudio.com:8080');
+    const ws = new WebSocket('ws://66.179.252.151:8080');
     ws.onmessage = (event) => {
         document.getElementById('connections').innerText = event.data;
     };
