@@ -8,6 +8,7 @@
 <body>
 <h1>Connection status: <strong id='status'></strong></h1>
 <h2>Connected users: <strong id='connections'>0</strong></h2>
+<h2>Current time: <strong id='time'></strong></h2>
 <h2>Total time played: <strong id='totalTimePlayed'>0</strong> seconds</h2>
 <script src="renderer.js"></script>
 <script>
@@ -18,6 +19,8 @@
             document.getElementById('connections').innerText = message.data;
         } else if (message.type === 'time') {
             document.getElementById('time').innerText = message.data;
+        } else if (message.type === 'totalTimePlayed') {
+            document.getElementById('totalTimePlayed').innerText = message.data;
         }
     };
 </script>
