@@ -13,6 +13,12 @@
 <script src="renderer.js"></script>
 <script>
     const ws = new WebSocket('ws://66.179.252.151:8447');
+    let totalTimePlayed = 0;
+
+    ws.onopen = () => {
+        ws.send(JSON.stringify({ type: 'requestTotalTimePlayed' }));
+    };
+
     ws.onmessage = (event) => {
         const message = JSON.parse(event.data);
         if (message.type === 'connections') {
@@ -20,9 +26,16 @@
         } else if (message.type === 'time') {
             document.getElementById('time').innerText = message.data;
         } else if (message.type === 'totalTimePlayed') {
-            document.getElementById('totalTimePlayed').innerText = message.data;
+            totalTimePlayed = message.data;
+            document.getElementById('totalTimePlayed').innerText = totalTimePlayed;
         }
     };
+
+    setInterval(() => {
+        totalTimePlayed++;
+        document.getElementById('totalTimePlayed').innerText = totalTimePlayed;
+        ws.send(JSON.stringify({ type: 'updateTotalTimePlayed', data: totalTimePlayed }));
+    }, 1000);
 </script>
 </body>
 </html>
