@@ -1,4 +1,4 @@
-wss.on('connection', (ws) => {
+ws.on('connection', (ws) => {
     connections++;
     const clientId = uuidv4();
     clientPlayTimes[clientId] = clientPlayTimes[clientId] || 0;
